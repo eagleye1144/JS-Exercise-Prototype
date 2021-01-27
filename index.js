@@ -81,7 +81,7 @@ function Airplane(name) {
     this.model = model;
     this.milesPerGallon = milesPerGallon;
     this.tank = 0;
-    this.odemeter = 0;
+    this.odometer = 0;
   }
 
   Car.prototype.fill = function(gallons) {
@@ -96,8 +96,15 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(favoriteToy) {
+   Person.call(this, favoriteToy)
+   this.babyToy = favoriteToy.babyToy;
+
+  }
+Baby.prototype = Object.create(Person.prototype);
+
+  Baby.prototype.play = function() {
+    return `Playing with ${this.favoriteToy}`;
   }
  
   
