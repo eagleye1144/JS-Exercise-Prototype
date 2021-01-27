@@ -96,25 +96,28 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby(favoriteToy) {
-   Person.call(this, favoriteToy)
-   this.babyToy = favoriteToy.babyToy;
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age, favoriteToy)
+   this.favoriteToy = favoriteToy;
 
   }
 Baby.prototype = Object.create(Person.prototype);
 
   Baby.prototype.play = function() {
-    return `Playing with ${this.favoriteToy}`;
+    return (`Playing with ${this.favoriteToy}`);
   }
  
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. In Window/Gobal, "this" is reffering to where JavaScript is. It's a place where the language of JavaScript is. 
+        If you are in the global scope, "this" will be the window/console Object
+    2. In Implicit Binding, when "this" is used to call an object,
+         or in other words whenever there is a method is called on a object "Obj.something", the "Obj" is "this".
+    3. In New Binding, "this" works with constructer functions. it is used in the properties of the objects "this.greeting = "Hello"
+        and then it is used when you call that function.
+    4. In Explicit Binding, you are explicity binding what this is pointing to and you can overide or trump other types of Binding.
   */
   
   
